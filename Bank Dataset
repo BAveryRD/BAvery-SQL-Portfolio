@@ -1,0 +1,20 @@
+## Used this to get an idea of what was available within the data
+SELECT *
+FROM bank_products;
+
+## Used to show the different types of bank accounts that were available and being analyzed
+SELECT product_name
+FROM bank_products;
+
+## Only wanted to view checking and savings account types within the data
+SELECT *
+FROM bank_products
+WHERE product_type = "Savings"
+OR product_type = "Checking";
+
+## Wanted to find Savings account options that met specific criteria (interest rate above 0.75 and monthly fee of 0)
+SELECT product_name, interest_rate
+FROM bank_products
+WHERE product_type = "Savings"
+AND interest_rate >= 0.75
+AND monthly_fee = 0.00
