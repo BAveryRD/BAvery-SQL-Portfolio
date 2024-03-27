@@ -1,0 +1,20 @@
+--Overview of data available
+SELECT *
+FROM employees;
+
+--Looking at the sum of salaries from each department
+SELECT department, SUM(salary) as sum_salary
+FROM employees
+GROUP BY department;
+
+--Looking only at departments with a total salary expenditure of 300000 per year
+SELECT department, SUM(salary) as sum_salary
+FROM employees
+GROUP BY department
+HAVING sum_salary>300000;
+
+--Looking only at departments with an average salary per employee of over 70000 per year
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING avg_salary>70000
